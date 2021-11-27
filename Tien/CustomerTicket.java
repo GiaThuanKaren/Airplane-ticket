@@ -8,7 +8,7 @@ public class CustomerTicket { //VE - KH
     private String ticketID;// mã vé
     private String boardingTime;// giờ lên máy bay
     private int seatNumber;// số ghế
-    Scanner sc = new Scanner(System.in);
+    
 
     public CustomerTicket() {
 
@@ -22,15 +22,16 @@ public class CustomerTicket { //VE - KH
         this.seatNumber = seatNumber;
     }
 
-    public CustomerTicket(CustomerTicket customerTicket) {
-        customerTicket.customerTicketID = this.customerTicketID;
-        customerTicket.customerID = this.customerID;
-        customerTicket.ticketID = this.ticketID;
-        customerTicket.boardingTime = this.boardingTime;
-        customerTicket.seatNumber = this.seatNumber;
+    public CustomerTicket(CustomerTicket ct) {
+        ct.customerTicketID = this.customerTicketID;
+        ct.customerID = this.customerID;
+        ct.ticketID = this.ticketID;
+        ct.boardingTime = this.boardingTime;
+        ct.seatNumber = this.seatNumber;
     }
 
     public void input() {
+        Scanner sc = new Scanner(System.in);
         System.out.println("Enter customer ticket ID: ");
         customerTicketID = sc.nextLine();
         System.out.println("Enter customer ID: ");

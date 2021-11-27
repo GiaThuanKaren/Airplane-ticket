@@ -7,7 +7,6 @@ public class FlightTicket { // VE CHUYEN BAY
     private int ticketType; // loai ve (0 - Khu hoi, 1 - mot chieu)
     private int numberOfTicket; // tong so luong ve
     private int numberOfTicketLeft; // so luong ve con lai
-
     private int ticketPrice; // gia ve
 
     public FlightTicket() {
