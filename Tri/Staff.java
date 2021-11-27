@@ -12,7 +12,6 @@ public class Staff { // NHAN VIEN
 	}
 
 	public Staff(String staffId, String staffName, String phoneNumber, String identityCart) {
-		super();
 		this.staffId = staffId;
 		this.staffName = staffName;
 		this.phoneNumber = phoneNumber;
