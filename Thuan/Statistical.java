@@ -1,29 +1,30 @@
 
+
 import java.util.Scanner;
 
 public class Statistical { // THONG KE
 	// Attribute
 	private String statisticalId; // ma thong ke
 	private String ticketName; // ten hang ve
-	private int numberofTicket; // so luong hang ve
+	private int numberOfTicket; // so luong hang ve
 	private int ticketRevenue; // doanh thu ve
 
 	public Statistical() {
 
 	}
 
-	public Statistical(String statisticalId, String ticketName, int numberofTicket, int ticketRevenue) {
+	public Statistical(String statisticalId, String ticketName, int numberOfTicket, int ticketRevenue) {
 		super();
 		this.statisticalId = statisticalId;
 		this.ticketName = ticketName;
-		this.numberofTicket = numberofTicket;
+		this.numberOfTicket = numberOfTicket;
 		this.ticketRevenue = ticketRevenue;
 	}
 
 	public Statistical(Statistical s) {
 		statisticalId = s.statisticalId;
 		ticketName = s.ticketName;
-		numberofTicket = s.numberofTicket;
+		numberOfTicket = s.numberOfTicket;
 		ticketRevenue = s.ticketRevenue;
 	}
 
@@ -35,20 +36,20 @@ public class Statistical { // THONG KE
 		this.statisticalId = statisticalId;
 	}
 
-	public String getTickettName() {
+	public String getTicketName() {
 		return ticketName;
 	}
 
-	public void setTickettName(String tickettName) {
+	public void setTicketName(String tickettName) {
 		this.ticketName = tickettName;
 	}
 
-	public int getNumberofTicket() {
-		return numberofTicket;
+	public int getNumberOfTicket() {
+		return numberOfTicket;
 	}
 
-	public void setNumberofTicket(int numberofTicket) {
-		this.numberofTicket = numberofTicket;
+	public void setNumberOfTicket(int numberOfTicket) {
+		this.numberOfTicket = numberOfTicket;
 	}
 
 	public int getTicketRevenue() {
@@ -66,17 +67,19 @@ public class Statistical { // THONG KE
 		System.out.println("Enter Ticket Name: ");
 		ticketName = sc.nextLine();
 		System.out.println("Enter Number Of Ticket: ");
-		numberofTicket = sc.nextInt();
+		numberOfTicket = sc.nextInt();
 		System.out.println("Enter Revenue  Of Ticket: ");
 		ticketRevenue = sc.nextInt();
 	}
-
+	
 	public void output() {
 		System.out.println("Statistical information: ");
 		System.out.println("Statistical ID: " + statisticalId);
-		System.out.println("Ticket Name: " + ticketName);
-		System.out.println("Number Of Ticket: " + numberofTicket);
-		System.out.println("Revenue Of Ticket: " + ticketRevenue + " " + "VND");
+		System.out.println("Ticket Name: " +ticketName);
+		System.out.println("Number Of Ticket: " +  numberOfTicket);
+		System.out.println("Revenue Of Ticket: " +  ticketRevenue + " " +"VND");
 	}
+
+	
 
 }

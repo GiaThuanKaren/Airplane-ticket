@@ -1,27 +1,37 @@
-
+// package doan;
 import java.util.Scanner;
-
 public class Staff { // NHAN VIEN
 	// Attribute
 	private String staffId; // ma nhan vien
 	private String staffName; // ten nhan vien
 	private String phoneNumber; // so dien thoai nhan vien
+	private String identityCart ; // can cuoc cong dan
 
 	public Staff() {
 
 	}
 
-	public Staff(String staffId, String staffName, String phoneNumber) {
+	public Staff(String staffId, String staffName, String phoneNumber, String identityCart) {
 		super();
 		this.staffId = staffId;
 		this.staffName = staffName;
 		this.phoneNumber = phoneNumber;
+		this.identityCart = identityCart;
 	}
 
 	public Staff(Staff s) {
 		staffId = s.staffId;
 		staffName = s.staffName;
 		phoneNumber = s.phoneNumber;
+		identityCart = s.identityCart;
+	}
+
+	public String getIdentityCart() {
+		return identityCart;
+	}
+
+	public void setIdentityCart(String identityCart) {
+		this.identityCart = identityCart;
 	}
 
 	public String getStaffId() {
@@ -56,6 +66,9 @@ public class Staff { // NHAN VIEN
 		staffName = sc.nextLine();
 		System.out.println("Enter Phone Number: ");
 		phoneNumber = sc.nextLine();
+		System.out.println("Enter Identity Cart: ");
+		identityCart = sc.nextLine();
+		
 	}
 
 	public void output() {
@@ -63,6 +76,8 @@ public class Staff { // NHAN VIEN
 		System.out.println("Staff ID: " + staffId);
 		System.out.println("Staff Name: " + staffName);
 		System.out.println("Phone Number: " + phoneNumber);
+		System.out.println("IdentityCart: " + identityCart);
 	}
 
 }
+
