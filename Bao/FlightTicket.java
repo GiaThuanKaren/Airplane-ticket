@@ -5,20 +5,17 @@ public class FlightTicket { // VE CHUYEN BAY
     private String flightTicketId; // Ma ve
     private String flightId; // ma chuyen bay
     private int ticketType; // loai ve (0 - Khu hoi, 1 - mot chieu)
-    private int numberOfTicket; // tong so luong ve
-    private int numberOfTicketLeft; // so luong ve con lai
+    private String boardingTime; // gio len may bay
     private int ticketPrice; // gia ve
 
     public FlightTicket() {
     }
 
-    public FlightTicket(String flightTicketId, String flightId, int ticketType, int numberOfTicket,
-            int numberOfTicketLeft, int ticketPrice) {
+    public FlightTicket(String flightTicketId, String flightId, int ticketType, String boardingTime, int ticketPrice) {
         this.flightTicketId = flightTicketId;
         this.flightId = flightId;
         this.ticketType = ticketType;
-        this.numberOfTicket = numberOfTicket;
-        this.numberOfTicketLeft = numberOfTicketLeft;
+        this.boardingTime = boardingTime;
         this.ticketPrice = ticketPrice;
     }
 
@@ -26,8 +23,7 @@ public class FlightTicket { // VE CHUYEN BAY
         flightTicketId = ft.flightTicketId;
         flightId = ft.flightId;
         ticketType = ft.ticketType;
-        numberOfTicket = ft.numberOfTicket;
-        numberOfTicketLeft = ft.numberOfTicketLeft;
+        boardingTime = ft.boardingTime;
         ticketPrice = ft.ticketPrice;
     }
 
@@ -55,20 +51,12 @@ public class FlightTicket { // VE CHUYEN BAY
         this.ticketType = ticketType;
     }
 
-    public int getNumberOfTicket() {
-        return numberOfTicket;
+    public String getBoardingTime() {
+        return boardingTime;
     }
 
-    public void setNumberOfTicket(int numberOfTicket) {
-        this.numberOfTicket = numberOfTicket;
-    }
-
-    public int getNumberOfTicketLeft() {
-        return numberOfTicketLeft;
-    }
-
-    public void setNumberOfTicketLeft(int numberOfTicketLeft) {
-        this.numberOfTicketLeft = numberOfTicketLeft;
+    public void setBoardingTime(String boardingTime) {
+        this.boardingTime = boardingTime;
     }
 
     public int getTicketPrice() {
@@ -87,20 +75,18 @@ public class FlightTicket { // VE CHUYEN BAY
         flightId = sc.nextLine();
         System.out.println("Enter Ticket Type: \n 0: Round Tip \n 1: One Way");
         ticketType = sc.nextInt();
-        System.out.println("Enter Number Of Ticket: ");
-        numberOfTicket = sc.nextInt();
-        System.out.println("Enter Number Of Ticket Left: ");
-        numberOfTicketLeft = sc.nextInt();
+        System.out.println("Enter Boarding Time: ");
+        boardingTime = sc.nextLine();
         System.out.println("Enter Ticket Price: ");
         ticketPrice = sc.nextInt();
     }
 
     public void output() {
-        System.out.println("Enter Flight Ticket ID: " + flightTicketId);
-        System.out.println("Enter Flight ID: " + flightId);
-        System.out.println("Enter Ticket Type: " + ticketType);
-        System.out.println("Enter Number Of Ticket: " + numberOfTicket);
-        System.out.println("Enter Number Of Ticket Left: " + numberOfTicketLeft);
-        System.out.println("Enter Ticket Price: " + ticketPrice);
+        System.out.println("Flight Ticket Information: ");
+        System.out.println("Flight Ticket ID: " + flightTicketId);
+        System.out.println("Flight ID: " + flightId);
+        System.out.println("Ticket Type: " + ticketType);
+        System.out.println("Boarding Time: " + boardingTime);
+        System.out.println("Ticket Price: " + ticketPrice);
     }
 }

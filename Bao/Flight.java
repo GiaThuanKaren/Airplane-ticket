@@ -5,25 +5,26 @@ public class Flight { // CHUYEN BAY
     private String flightId; // ma chuyen bay
     private String routeId; // ma lo trinh
     private String flightRouteId; // ma tuyen bay
-    private String planeId; // ma may bay
+    private String airplaneId; // ma may bay
     private int status; // 1 - san sang, 0 - khong san sang
-    private String takeOffTime; // gio cat canh
-    private String landingTime; // gio ha canh
+    private int numberOfTicket; // tong so luong ve
+    private int numberOfTicketLeft; // tong so luong ve con lai
     private String takeOffDay; // ngay cat canh
     private String landingDay; // ngay ha canh
 
     public Flight() {
     }
 
-    public Flight(String flightId, String routeId, String flightRouteId, String planeId, int status, String takeOffTime,
-            String landingTime, String takeOffDay, String landingDay) {
+    public Flight(String flightId, String routeId, String flightRouteId, String airplaneId, int status,
+            int numberOfTicket,
+            int numberOfTicketLeft, String takeOffDay, String landingDay) {
         this.flightId = flightId;
         this.routeId = routeId;
         this.flightRouteId = flightRouteId;
-        this.planeId = planeId;
+        this.airplaneId = airplaneId;
         this.status = status;
-        this.takeOffTime = takeOffTime;
-        this.landingTime = landingTime;
+        this.numberOfTicket = numberOfTicket;
+        this.numberOfTicketLeft = numberOfTicketLeft;
         this.takeOffDay = takeOffDay;
         this.landingDay = landingDay;
     }
@@ -32,10 +33,10 @@ public class Flight { // CHUYEN BAY
         flightId = f.flightId;
         routeId = f.routeId;
         flightRouteId = f.flightRouteId;
-        planeId = f.planeId;
+        airplaneId = f.airplaneId;
         status = f.status;
-        takeOffTime = f.takeOffTime;
-        landingTime = f.landingTime;
+        numberOfTicket = f.numberOfTicket;
+        numberOfTicketLeft = f.numberOfTicketLeft;
         takeOffDay = f.takeOffDay;
         landingDay = f.landingDay;
     }
@@ -64,12 +65,12 @@ public class Flight { // CHUYEN BAY
         this.flightRouteId = flightRouteId;
     }
 
-    public String getPlaneId() {
-        return planeId;
+    public String getAirplaneId() {
+        return airplaneId;
     }
 
-    public void setPlaneId(String planeId) {
-        this.planeId = planeId;
+    public void setAirplaneId(String airplaneId) {
+        this.airplaneId = airplaneId;
     }
 
     public int getStatus() {
@@ -80,12 +81,20 @@ public class Flight { // CHUYEN BAY
         this.status = status;
     }
 
-    public String getTakeOffTime() {
-        return takeOffTime;
+    public String getNumberOfTicket() {
+        return numberOfTicket;
     }
 
-    public void setTakeOffTime(String takeOffTime) {
-        this.takeOffTime = takeOffTime;
+    public void setNumberOfTicket(String numberOfTicket) {
+        this.numberOfTicket = numberOfTicket;
+    }
+
+    public String getNumberOfTicketLeft() {
+        return numberOfTicket;
+    }
+
+    public void setNumberOfTicketLeft(String numberOfTicketLeft) {
+        this.numberOfTicketLeft = numberOfTicketLeft;
     }
 
     public String getTakeOffDay() {
@@ -113,13 +122,13 @@ public class Flight { // CHUYEN BAY
         System.out.println("Enter Flight Route ID: ");
         flightRouteId = sc.nextLine();
         System.out.println("Enter Plane ID: ");
-        planeId = sc.nextLine();
+        airplaneId = sc.nextLine();
         System.out.println("Enter Status: \n 0: Available \n 1: Non-available \n");
         status = sc.nextInt();
-        System.out.println("Enter Take Off Time: ");
-        takeOffTime = sc.nextLine();
-        System.out.println("Enter Landing Time: ");
-        landingTime = sc.nextLine();
+        System.out.println("Enter Number of ticket: ");
+        numberOfTicket = sc.nextLine();
+        System.out.println("Enter Number of ticket left: ");
+        numberOfTicketLeft = sc.nextLine();
         System.out.println("Enter Take Off Day: ");
         takeOffDay = sc.nextLine();
         System.out.println("Enter Landing Day: ");
@@ -127,14 +136,15 @@ public class Flight { // CHUYEN BAY
     }
 
     public void output() {
-        System.out.println("Enter Flight ID: " + flightId);
-        System.out.println("Enter Route ID: " + routeId);
-        System.out.println("Enter Flight Route ID: " + flightRouteId);
-        System.out.println("Enter Plane ID: " + planeId);
-        System.out.println("Enter Status: " + status);
-        System.out.println("Enter Take Off Time: " + takeOffTime);
-        System.out.println("Enter Landing Time: " + landingTime);
-        System.out.println("Enter Take Off Day: " + takeOffDay);
-        System.out.println("Enter Landing Day: " + LandingDay);
+        System.out.println("Flight information: ");
+        System.out.println("Flight ID: " + flightId);
+        System.out.println("Route ID: " + routeId);
+        System.out.println("Flight Route ID: " + flightRouteId);
+        System.out.println("Plane ID: " + airplaneId);
+        System.out.println("Status: " + status);
+        System.out.println("Number of ticket: " + numberOfTicket);
+        System.out.println("Number of ticket left: " + numberOfTicketLeft);
+        System.out.println("Take Off Day: " + takeOffDay);
+        System.out.println("Landing Day: " + LandingDay);
     }
 }

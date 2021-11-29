@@ -9,9 +9,9 @@ public class BusinessClassTicket extends FlightTicket { // VE PHO THONG
     public BusinessClassTicket() {
     }
 
-    public BusinessClassTicket(String flightTicketId, String flightId, boolean ticketType, int numberOfTicket,
-            int numberOfTicketLeft, int ticketPrice, int chairNumber, String waitingRoomId, String businessClassId) {
-        super(flightTicketId, flightId, ticketType, numberOfTicket, numberOfTicketLeft, ticketPrice);
+    public BusinessClassTicket(String flightTicketId, String flightId, int ticketType, String boardingTime,
+            int ticketPrice, int chairNumber, String waitingRoomId, String businessClassId) {
+        super(flightTicketId, flightId, ticketType, boardingTime, ticketPrice);
         this.chairNumber = chairNumber;
         this.waitingRoomId = waitingRoomId;
         this.businessClassId = businessClassId;
@@ -57,30 +57,29 @@ public class BusinessClassTicket extends FlightTicket { // VE PHO THONG
         flightId = sc.nextLine();
         System.out.println("Enter Ticket Type: \n 0: Round Tip \n 1: One Way");
         ticketType = sc.nextInt();
-        System.out.println("Enter Number Of Ticket: ");
-        numberOfTicket = sc.nextInt();
-        System.out.println("Enter Number Of Ticket Left: ");
+        System.out.println("Enter Boarding Time: ");
+        boardingTime = sc.nextLine();
         numberOfTicketLeft = sc.nextInt();
         System.out.println("Enter Ticket Price: ");
         ticketPrice = sc.nextInt();
         System.out.println("Enter Chair Number: ");
         chairNumber = sc.nextInt();
         System.out.println("Enter Waiting Room ID: ");
-        waitingRoomId = sc.nextString();
+        waitingRoomId = sc.nextLine();
         System.out.println("Enter Business Class ID: ");
-        businessClassId = sc.nextString();
+        businessClassId = sc.nextLine();
     }
 
     @Override
     public void output() {
-        System.out.println("Enter Flight Ticket ID: " + flightTicketId);
-        System.out.println("Enter Flight ID: " + flightId);
-        System.out.println("Enter Ticket Type: " + ticketType);
-        System.out.println("Enter Number Of Ticket: " + numberOfTicket);
-        System.out.println("Enter Number Of Ticket Left: " + numberOfTicketLeft);
-        System.out.println("Enter Ticket Price: " + ticketPrice);
-        System.out.println("Enter Chair Number: " + chairNumber);
-        System.out.println("Enter Waiting Room ID: " + waitingRoomId);
-        System.out.println("Enter Business Class ID: " + businessClassId);
+        System.out.println("Business Class Ticket Information: ");
+        System.out.println("Flight Ticket ID: " + flightTicketId);
+        System.out.println("Flight ID: " + flightId);
+        System.out.println("Ticket Type: " + ticketType);
+        System.out.println("Boarding Time: " + boardingTime);
+        System.out.println("Ticket Price: " + ticketPrice);
+        System.out.println("Chair Number: " + chairNumber);
+        System.out.println("Waiting Room ID: " + waitingRoomId);
+        System.out.println("Business Class ID: " + businessClassId);
     }
 }
