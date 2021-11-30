@@ -2,65 +2,64 @@
 
 import java.util.Scanner;
 
-public class Airport { //SAN BAY
-	//Attribute
-	Scanner in=new Scanner(System.in);
-	private String airportID; //Lưu trữ mã sân bay
+public class Airport { // SAN BAY
+	// Attribute
+	Scanner in = new Scanner(System.in);
+	private String airportID; // Lưu trữ mã sân bay
 	private String airportName; // Lưu trữ tên sân bay
 	private String city; // Lưu trữ tên thành phố có cái sân bay đó
-	
-	public Airport(String airportID,String airportName,String city) {
-		this.airportID=airportID;
-		this.airportName=airportName;
-		this.city=city;
-	}
-	
-	public Airport(Airport a) {
-		this.airportID=a.airportID;
-		this.airportName=a.airportName;
-		this.city=a.city;
+
+	public Airport(String airportID, String airportName, String city) {
+		this.airportID = airportID;
+		this.airportName = airportName;
+		this.city = city;
 	}
 
-	public String getairportID() {
+	public Airport(Airport a) {
+		airportID = a.airportID;
+		airportName = a.airportName;
+		city = a.city;
+	}
+
+	public String getAirportID() {
 		return airportID;
 	}
 
-	public void setairportID(String airportID) {
-		airportID = airportID;
+	public void setAirportID(String airportID) {
+		this.airportID = airportID;
 	}
 
-	public String getairportName() {
+	public String getAirportName() {
 		return airportName;
 	}
 
-	public void setairportName(String airportName) {
-		airportName = airportName;
+	public void setAirportName(String airportName) {
+		this.airportName = airportName;
 	}
 
-	public String getcity() {
+	public String getCity() {
 		return city;
 	}
 
-	public void setcity(String city) {
-		city = city;
+	public void setCity(String city) {
+		this.city = city;
 	}
-	// Đây là phương thức nhập thông tin của 1 sân bay
-	public void Nhap() {
-		System.out.println("Nhap Thong Tin San Bay");
-		System.out.println("Nhap ma san bay");
-		this.airportID=in.nextLine();
-		System.out.println("Nhap ten san bay");
-		this.airportName=in.nextLine();
-		System.out.println("Nhap ten thanh pho");
-		this.airportName=in.nextLine();
+
+	public void input() {
+		System.out.println("Enter Airport ID: ");
+		airportID = in.nextLine();
+		System.out.println("Enter Airport Name: ");
+		airportName = in.nextLine();
+		System.out.println("Enter Airport City: ");
+		airportName = in.nextLine();
 	}
-	
-	// Đây là phương thức trả về thông tin của 1 sân bay
-	public String Xuat() {
-		return "\nairportID: "+this.airportID+
-				"\nairportName: "+this.airportName
-				+"\ncity: "+this.city+"\n";
+
+	public void output() {
+		System.out.println("Airport Information: ");
+		System.out.println("Airport ID:" + airportID);
+		System.out.println("Airport Name:" + airportName);
+		System.out.println("Airport City:" + airportCity);
+
 	}
-	
-	
+
 }

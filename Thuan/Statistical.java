@@ -1,5 +1,4 @@
 
-
 import java.util.Scanner;
 
 public class Statistical { // THONG KE
@@ -14,7 +13,6 @@ public class Statistical { // THONG KE
 	}
 
 	public Statistical(String statisticalId, String ticketName, int numberOfTicket, int ticketRevenue) {
-		super();
 		this.statisticalId = statisticalId;
 		this.ticketName = ticketName;
 		this.numberOfTicket = numberOfTicket;
@@ -40,8 +38,8 @@ public class Statistical { // THONG KE
 		return ticketName;
 	}
 
-	public void setTicketName(String tickettName) {
-		this.ticketName = tickettName;
+	public void setTicketName(String ticketName) {
+		this.ticketName = ticketName;
 	}
 
 	public int getNumberOfTicket() {
@@ -68,18 +66,16 @@ public class Statistical { // THONG KE
 		ticketName = sc.nextLine();
 		System.out.println("Enter Number Of Ticket: ");
 		numberOfTicket = sc.nextInt();
-		System.out.println("Enter Revenue  Of Ticket: ");
+		System.out.println("Enter Revenue Of Ticket: ");
 		ticketRevenue = sc.nextInt();
 	}
-	
+
 	public void output() {
 		System.out.println("Statistical information: ");
 		System.out.println("Statistical ID: " + statisticalId);
-		System.out.println("Ticket Name: " +ticketName);
-		System.out.println("Number Of Ticket: " +  numberOfTicket);
-		System.out.println("Revenue Of Ticket: " +  ticketRevenue + " " +"VND");
+		System.out.println("Ticket Name: " + ticketName);
+		System.out.println("Number Of Ticket: " + numberOfTicket);
+		System.out.println("Revenue Of Ticket: " + ticketRevenue + " " + "VND");
 	}
-
-	
 
 }

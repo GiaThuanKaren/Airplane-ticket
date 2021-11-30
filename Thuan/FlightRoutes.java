@@ -1,34 +1,40 @@
-package DOANOOP;
+// package DOANOOP;
 
 import java.util.Scanner;
 
 public class FlightRoutes { // TUYEN BAY
 	// Attribute
-	private String flightId; // ma tuyen bay
+	private String flightRouteId; // ma tuyen bay
 	private String takeOffAirport; // San Bay Cat Canh;
 	private String landingAirport;// San Bay Ha Canh;
+	private String takeOffTime; // gio cat canh
+	private String landingTime; // gio ha canh
 
 	public FlightRoutes() {
 	}
 
-	public FlightRoutes(String flightId, String takeOffAirport, String landingAirport) {
-		this.flightId = flightId;
+	public FlightRoutes(String flightRouteId, String takeOffAirport, String landingAirport, String takeOffTime, String landingTime) {
+		this.flightRouteId = flightRouteId;
 		this.takeOffAirport = takeOffAirport;
 		this.landingAirport = landingAirport;
+		this.takeOffTime = takeOffTime;
+		this.landingTime = landingTime;
 	}
 
 	public FlightRoutes(FlightRoutes a) {
 		takeOffAirport = a.takeOffAirport;
 		landingAirport = a.landingAirport;
-		flightId = a.flightId;
+		flightRouteId = a.flightRouteId;
+		takeOffTime = a.takeOffTime;
+		landingTime = a.landingTime;
 	}
 
-	public String getFlightId() {
-		return flightId;
+	public String getFlightRouteId() {
+		return flightRouteId;
 	}
 
-	public void setFlightId(String flightId) {
-		this.flightId = flightId;
+	public void setFlightRouteId(String flightRouteId) {
+		this.flightRouteId = flightRouteId;
 	}
 
 	public String getTakeOffAirport() {
@@ -47,18 +53,42 @@ public class FlightRoutes { // TUYEN BAY
 		this.landingAirport = landingAirport;
 	}
 
-	public void Input() {
-		System.out.println("Enter  ");
-		flightId = in.nextLine();
-		System.out.println("Nhap San bay luc khoi hanh");
-		takeOffAirport = in.next();
-		System.out.println("Nhap san bay luc dap xuong");
-		this.landingAirport = in.next();
+	public String getTakeOffTime() {
+		return takeOffTime;
 	}
 
-	public String OutPut() {
-		Scanner in = new Scanner(System.in);
-		System.out.println("Flight Route Information: ");
+	public void setTakeOffTime(String takeOffTime) {
+		this.takeOffTime = takeOffTime;
+	}
 
+	public String getLandingTime() {
+		return landingTime;
+	}
+
+	public void setLandingTime(String landingTime) {
+		this.landingTime = landingTime;
+	}
+
+	public void input() {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter Flight Route ID: ");
+		flightRouteId = sc.nextLine();
+		System.out.println("Enter Take Off Airport: ");
+		takeOffAirport = in.nextLine();
+		System.out.println("Enter Landing Airport: ");
+		landingAirport = in.nextLine();
+		System.out.println("Enter Take Off Time:");
+		takeOffTime = in.nextLine();
+		System.out.println("Enter Landing Time: ");
+		landingTime = in.nextLine();
+	}
+
+	public void output() {
+		System.out.println("Flight Route Information: ");
+		System.out.println("Flight Route ID: " + flightRouteId);
+		System.out.println("Take Off Airport: " + takeOffAirport);
+		System.out.println("Landing Airport: " + landingAirport);
+		System.out.println("Take Off Time:" + takeOffTime);
+		System.out.println("Landing Time: " + landingTime);
 	}
 }

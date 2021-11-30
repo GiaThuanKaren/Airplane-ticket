@@ -15,8 +15,8 @@ public class Route { //LO TRINH
 	}
 	
 	public Route(Route a) {
-		this.routeID=a.routeID;
-		this.routeName=a.routeName;
+		routeID=a.routeID;
+		routeName=a.routeName;
 	}
 
 	public String getRouteID() {
@@ -32,20 +32,19 @@ public class Route { //LO TRINH
 	}
 
 	public void setrouteName(String routeName) {
-		routeName = routeName;
+		this.routeName = routeName;
 	}
-	public void Nhap() {
-		System.out.println("Nhap thong tin cho lo trinh");
-		System.out.println("Nhap ma lo trinh");
-		this.routeID=in.nextLine();
-		System.out.println("Nhap ten lo trinh");
-		this.routeName=in.nextLine();
+	public void input() {
+		System.out.println("Enter Route ID: ");
+		routeID = in.nextLine();
+		System.out.println("Enter Route Name: ");
+		routeName = in.nextLine();
 	}
 	
-	public String Xuat() {
-		return "Ma Lo Trinh: "+this.routeID
-				+"\nTen Lo Trinh: "+this.routeName
-				+"\n";
+	public void output(){
+		System.out.println("Route Information: ");
+		System.out.println("Route ID: " + routeID);
+		System.out.println("Route Name: " + routeName);
 	}
 	
 	
