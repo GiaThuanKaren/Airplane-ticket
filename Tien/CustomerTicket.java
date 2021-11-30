@@ -6,28 +6,24 @@ public class CustomerTicket { //VE - KH
     private String customerTicketID;//mã vé-kh
     private String customerID;//mã khách hàng
     private String ticketID;// mã vé
-    private String boardingTime;// giờ lên máy bay
-    private int seatNumber;// số ghế
+    private String purchaseDate;//ngày mua vé
     
 
     public CustomerTicket() {
 
     }
 
-    public CustomerTicket(String customerTicketID, String customerID, String ticketID, String boardingTime, int seatNumber) {
+    public CustomerTicket(String customerTicketID, String customerID, String ticketID, String purchaseDate) {
         this.customerTicketID = customerTicketID;
         this.customerID = customerID;
         this.ticketID = ticketID;
-        this.boardingTime = boardingTime;
-        this.seatNumber = seatNumber;
+        this.purchaseDate=purchaseDate;
     }
 
     public CustomerTicket(CustomerTicket ct) {
         ct.customerTicketID = this.customerTicketID;
         ct.customerID = this.customerID;
-        ct.ticketID = this.ticketID;
-        ct.boardingTime = this.boardingTime;
-        ct.seatNumber = this.seatNumber;
+        ct.purchaseDate=this.purchaseDate;
     }
 
     public void input() {
@@ -38,17 +34,14 @@ public class CustomerTicket { //VE - KH
         customerID = sc.nextLine();
         System.out.println("Enter ticket ID: ");
         ticketID = sc.nextLine();
-        System.out.println("Enter boarding time: ");
-        boardingTime = sc.nextLine();
-        System.out.println("Enter seat number: ");
-        seatNumber = sc.nextInt();
+        System.out.println("Enter purchase date: ");
+        purchaseDate=sc.nextLine();
     }
 
     public void output() {
         System.out.println("Customer ticket ID: " + customerTicketID);
         System.out.println("Customer ID: " + customerID);
         System.out.println("Ticket ID: " + ticketID);
-        System.out.println("Boarding time: " + boardingTime);
-        System.out.println("Seat number: " + seatNumber);
+        System.out.println("Purchase date: " + purchaseDate);
     }
 }
