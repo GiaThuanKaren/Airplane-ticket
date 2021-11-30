@@ -31,7 +31,7 @@ public class Route { //LO TRINH
 		return routeName;
 	}
 
-	public void setrouteName(String routeName) {
+	public void setRouteName(String routeName) {
 		this.routeName = routeName;
 	}
 	public void input() {
