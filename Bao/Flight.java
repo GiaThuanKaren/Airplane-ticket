@@ -1,4 +1,9 @@
 import java.util.Scanner;
+import java.io.DataOutputStream;
+import java.io.DataInputStream;
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 public class Flight { // CHUYEN BAY
     // Attribute
@@ -81,19 +86,19 @@ public class Flight { // CHUYEN BAY
         this.status = status;
     }
 
-    public String getNumberOfTicket() {
+    public int getNumberOfTicket() {
         return numberOfTicket;
     }
 
-    public void setNumberOfTicket(String numberOfTicket) {
+    public void setNumberOfTicket(int numberOfTicket) {
         this.numberOfTicket = numberOfTicket;
     }
 
-    public String getNumberOfTicketLeft() {
+    public int getNumberOfTicketLeft() {
         return numberOfTicket;
     }
 
-    public void setNumberOfTicketLeft(String numberOfTicketLeft) {
+    public void setNumberOfTicketLeft(int numberOfTicketLeft) {
         this.numberOfTicketLeft = numberOfTicketLeft;
     }
 
@@ -126,13 +131,15 @@ public class Flight { // CHUYEN BAY
         System.out.println("Enter Status: \n 0: Available \n 1: Non-available \n");
         status = sc.nextInt();
         System.out.println("Enter Number of ticket: ");
-        numberOfTicket = sc.nextLine();
+        numberOfTicket = sc.nextInt();
         System.out.println("Enter Number of ticket left: ");
-        numberOfTicketLeft = sc.nextLine();
+        numberOfTicketLeft = sc.nextInt();
+        sc.nextLine();
         System.out.println("Enter Take Off Day: ");
         takeOffDay = sc.nextLine();
         System.out.println("Enter Landing Day: ");
         landingDay = sc.nextLine();
+        sc.close();
     }
 
     public void output() {
@@ -145,6 +152,20 @@ public class Flight { // CHUYEN BAY
         System.out.println("Number of ticket: " + numberOfTicket);
         System.out.println("Number of ticket left: " + numberOfTicketLeft);
         System.out.println("Take Off Day: " + takeOffDay);
-        System.out.println("Landing Day: " + LandingDay);
+        System.out.println("Landing Day: " + landingDay);
+    }
+
+    public void writeFile() throws IOException {
+        DataOutputStream outStream = new DataOutputStream(new FileOutputStream("flight.txt", Boolean.TRUE));
+        outStream.writeUTF(flightId);
+        outStream.writeUTF(routeId);
+        outStream.writeUTF(flightRouteId);
+        outStream.writeUTF(airplaneId);
+        outStream.writeInt(status);
+        outStream.writeInt(numberOfTicket);
+        outStream.writeInt(numberOfTicketLeft);
+        outStream.writeUTF(takeOffDay);
+        outStream.writeUTF(landingDay);
+        outStream.close();
     }
 }
